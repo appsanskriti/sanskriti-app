@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms and Conditions for the Sanskriti App – Sacred Hindu scriptures, prayers, stories and daily wisdom." />
+  <title>Terms &amp; Conditions – Sanskriti App</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --saffron: #D4500E;
+      --gold:    #C89B3C;
+      --dark:    #1C0F06;
+      --text:    #2D1E0F;
+      --muted:   #6B5744;
+      --bg:      #FBF5EE;
+      --card:    #FFFFFF;
+      --border:  #E8D8C4;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2E0D00 0%, #5C1A00 50%, #2E0D00 100%);
+      color: #FFF8EE;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header .om { font-size: 52px; line-height: 1; margin-bottom: 12px; }
+    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; color: #FFCC88; }
+    header .app-name { font-size: 1rem; color: #D4A86A; margin-top: 6px; }
+    header .badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 4px 16px;
+      border: 1px solid rgba(212,168,106,0.5);
+      border-radius: 20px;
+      font-size: 0.82rem;
+      color: #D4A86A;
+    }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    .toc-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .toc-card h2 { font-size: 1rem; color: var(--saffron); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.8px; }
+    .toc-card ol { padding-left: 20px; }
+    .toc-card li { margin-bottom: 6px; }
+    .toc-card a { color: var(--saffron); text-decoration: none; font-size: 0.95rem; }
+    .toc-card a:hover { text-decoration: underline; }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      color: var(--saffron);
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    section h3 { font-size: 1rem; color: var(--dark); font-weight: 600; margin: 18px 0 8px; }
+
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol { padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 7px; }
+
+    .highlight-box {
+      background: #FFF3E0;
+      border-left: 4px solid var(--gold);
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .info-box {
+      background: #E8F5E9;
+      border-left: 4px solid #2E7D32;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .warn-box {
+      background: #FFF8E1;
+      border-left: 4px solid #F57F17;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .danger-box {
+      background: #FFEBEE;
+      border-left: 4px solid #C62828;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    a { color: var(--saffron); }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px 40px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    footer .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 18px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="om">🕉</div>
+  <h1>Terms &amp; Conditions</h1>
+  <p class="app-name">Sanskriti – Sacred Hindu Scriptures &amp; Stories</p>
+  <span class="badge">Effective Date: October 4, 2026</span>
+</header>
+
+<div class="container">
+
+  <!-- Table of Contents -->
+  <div class="toc-card">
+    <h2>📋 Table of Contents</h2>
+    <ol>
+      <li><a href="#acceptance">Acceptance of Terms</a></li>
+      <li><a href="#description">Description of the App</a></li>
+      <li><a href="#free-service">Free Service &amp; Advertisements</a></li>
+      <li><a href="#intellectual-property">Intellectual Property &amp; Content Ownership</a></li>
+      <li><a href="#ai-content">AI-Generated Content &amp; Accuracy Disclaimer</a></li>
+      <li><a href="#user-conduct">Permitted &amp; Prohibited Use</a></li>
+      <li><a href="#sharing">Sharing Feature</a></li>
+      <li><a href="#notifications">Notifications</a></li>
+      <li><a href="#tts">Text-to-Speech</a></li>
+      <li><a href="#third-party">Third-Party Services &amp; Links</a></li>
+      <li><a href="#updates">App Updates &amp; Force Update</a></li>
+      <li><a href="#disclaimer">Disclaimer of Warranties</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#indemnification">Indemnification</a></li>
+      <li><a href="#governing-law">Governing Law &amp; Dispute Resolution</a></li>
+      <li><a href="#changes">Changes to These Terms</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Acceptance -->
+  <section id="acceptance">
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By downloading, installing, or using the <strong>Sanskriti</strong> mobile application ("App"), you confirm
+      that you have read, understood, and agree to be bound by these Terms &amp; Conditions ("Terms").
+    </p>
+    <p>
+      If you do not agree with any part of these Terms, please do not download or use the App.
+    </p>
+    <p>
+      These Terms apply to all users of the App worldwide. By continuing to use the App after any updates
+      to these Terms, you accept the revised Terms.
+    </p>
+    <div class="highlight-box">
+      📖 These Terms should be read alongside our <a href="./privacy-policy.html">Privacy Policy</a>,
+      which explains how we handle your information.
+    </div>
+  </section>
+
+  <!-- 2. Description -->
+  <section id="description">
+    <h2>2. Description of the App</h2>
+    <p>
+      Sanskriti is a <strong>free, ad-supported spiritual and cultural mobile application</strong> offering:
+    </p>
+    <ul>
+      <li><strong>Sacred Scriptures:</strong> Bhagavad Gita, Ramayana, Mahabharata — with Sanskrit shlokas,
+        transliterations, translations, explanations, and life lessons</li>
+      <li><strong>Prayers &amp; Aartis:</strong> Daily devotional prayers, stotras, chalisa, and aartis in
+        multiple languages</li>
+      <li><strong>Sacred Stories:</strong> Moral and mythological stories of Hindu deities and characters
+        (e.g., Krishna, Ram, Hanuman, Ganesh, Durga, Shiva)</li>
+      <li><strong>Daily Wisdom:</strong> Scheduled local notifications with a daily shloka for spiritual reflection</li>
+      <li><strong>Audio Playback:</strong> Text-to-speech audio of scriptures, prayers, and stories</li>
+      <li><strong>Multi-Language Support:</strong> Content available in English, Hindi, and Gujarati</li>
+      <li><strong>Personalization:</strong> Dark mode, reading fonts, background colors, favorites, and bookmarks</li>
+      <li><strong>Sharing:</strong> Share sacred verses and stories as image cards to social media or messaging apps</li>
+    </ul>
+    <p>
+      The App is designed for personal, non-commercial, devotional, and educational use only.
+    </p>
+  </section>
+
+  <!-- 3. Free Service & Ads -->
+  <section id="free-service">
+    <h2>3. Free Service &amp; Advertisements</h2>
+    <p>
+      Sanskriti is provided <strong>free of charge</strong>. To sustain development and hosting costs,
+      the App displays advertisements served by <strong>Google AdMob</strong>:
+    </p>
+    <ul>
+      <li><strong>Banner Ads:</strong> Non-intrusive ads displayed at the bottom of content screens</li>
+      <li><strong>Interstitial Ads:</strong> Full-screen ads shown periodically based on a configurable
+        frequency (e.g., after reading a set number of shlokas)</li>
+    </ul>
+    <p>
+      The ad frequency is controlled remotely and is designed to balance user experience with App sustainability.
+      Ad content is served by Google and is subject to Google AdMob's policies — we do not control the specific
+      ad content displayed.
+    </p>
+    <div class="info-box">
+      ✅ We are committed to keeping Sanskriti free and accessible. Ads help us maintain and improve the App
+      without charging users.
+    </div>
+  </section>
+
+  <!-- 4. Intellectual Property -->
+  <section id="intellectual-property">
+    <h2>4. Intellectual Property &amp; Content Ownership</h2>
+
+    <h3>a) App &amp; Branding</h3>
+    <p>
+      The <strong>Sanskriti</strong> name, logo, app design, user interface, and all custom-developed features
+      are the intellectual property of the Sanskriti development team. You may not copy, reproduce, modify,
+      distribute, or create derivative works from any part of the App without prior written permission.
+    </p>
+
+    <h3>b) Sacred Scripture Texts</h3>
+    <p>
+      The original Sanskrit, Hindi, and Gujarati texts of scriptures such as the Bhagavad Gita, Ramayana,
+      and Mahabharata are <strong>ancient sacred texts in the public domain</strong>. No copyright is claimed
+      over these original texts.
+    </p>
+
+    <h3>c) Translations, Explanations &amp; Commentary</h3>
+    <p>
+      Translations, explanations, life lessons, story narratives, and commentary written by the Sanskriti
+      team (including those assisted by AI tools) are the <strong>original work of the Sanskriti team</strong>
+      and are protected under applicable copyright law. You may not reproduce or distribute these in any
+      commercial context without permission.
+    </p>
+
+    <h3>d) Illustrative Images</h3>
+    <p>
+      Images of deities, characters, and scenes used within the App may be:
+    </p>
+    <ul>
+      <li>AI-generated images created for the App</li>
+      <li>Public domain or licensed devotional artwork</li>
+    </ul>
+    <p>
+      All images are used for <strong>devotional, educational, and illustrative purposes only</strong>.
+      Images depicting Hindu deities are used with the utmost respect for religious sentiments.
+    </p>
+
+    <h3>e) User-Generated Sharing</h3>
+    <p>
+      When you share content from the App (shloka cards, story previews), the generated image card is
+      for personal, non-commercial sharing only. You may not use shared content for commercial purposes.
+    </p>
+  </section>
+
+  <!-- 5. AI Content Disclaimer -->
+  <section id="ai-content">
+    <h2>5. AI-Generated Content &amp; Accuracy Disclaimer</h2>
+    <div class="warn-box">
+      ⚠️ <strong>Please Read This Section Carefully</strong>
+    </div>
+    <p>
+      Sanskriti uses <strong>Artificial Intelligence (AI) tools</strong> to assist in generating and translating:
+    </p>
+    <ul>
+      <li>Story narratives and moral descriptions</li>
+      <li>Shloka explanations and life lessons</li>
+      <li>English, Hindi, and Gujarati translations</li>
+      <li>Illustrative artwork and character images</li>
+    </ul>
+
+    <h3>Limitations of AI Content</h3>
+    <p>
+      AI-generated content is <strong>not infallible</strong>. It may occasionally:
+    </p>
+    <ul>
+      <li>Contain <strong>translation inaccuracies</strong> or nuances lost in the original Sanskrit</li>
+      <li>Reflect <strong>simplified or imprecise interpretations</strong> of complex theological concepts</li>
+      <li>Present <strong>illustrative images</strong> that are artistic representations, not historically
+        or religiously authoritative depictions</li>
+    </ul>
+
+    <h3>Not a Religious Authority</h3>
+    <p>
+      The App is designed for <strong>spiritual enrichment, learning, and inspiration</strong>. It is
+      <strong>not intended to be a definitive religious authority, a substitute for scholarly scripture study,
+      or guidance from qualified religious scholars (Pandits, Acharyas, etc.)</strong>
+    </p>
+    <p>
+      For authoritative study of scriptures, we recommend consulting certified translations by recognized
+      scholars (e.g., Swami Prabhupada's Bhagavad Gita As It Is, Valmiki Ramayana translations by
+      established Sanskrit scholars, etc.).
+    </p>
+
+    <h3>Reporting Errors</h3>
+    <p>
+      We deeply respect the sanctity of Hindu scriptures and traditions. If any content in the App seems
+      inaccurate, disrespectful, or offensive, we encourage and welcome reports:
+    </p>
+    <p>
+      📧 <a href="mailto:appsanskriti@gmail.com">appsanskriti@gmail.com</a> — Include the screen name,
+      specific content, and description of the issue. All reports are personally reviewed.
+    </p>
+  </section>
+
+  <!-- 6. User Conduct -->
+  <section id="user-conduct">
+    <h2>6. Permitted &amp; Prohibited Use</h2>
+
+    <h3>✅ Permitted Use</h3>
+    <ul>
+      <li>Personal, devotional, and educational use of all app content</li>
+      <li>Sharing shloka cards and story previews on social media for non-commercial devotional purposes</li>
+      <li>Saving content to Favorites for personal reference</li>
+      <li>Using TTS to listen to scriptures, prayers, and stories</li>
+    </ul>
+
+    <h3>🚫 Prohibited Use</h3>
+    <p>You agree <strong>not</strong> to:</p>
+    <ul>
+      <li>Use the App or its content for <strong>commercial purposes</strong> without written authorization</li>
+      <li>Attempt to <strong>reverse-engineer, decompile, or extract</strong> the App's source code, database,
+        or assets</li>
+      <li>Use the App to <strong>spread misinformation</strong> by misrepresenting the App's content out of context</li>
+      <li>Use any automated tools (bots, scrapers) to extract or harvest content from the App</li>
+      <li>Attempt to <strong>bypass or interfere</strong> with the App's ad delivery system</li>
+      <li>Use the App in any way that <strong>violates applicable local, national, or international laws</strong></li>
+      <li>Use the App in a manner that could <strong>disparage, defame, or harm</strong> any religion, community,
+        or individual</li>
+      <li>Republish, redistribute, or resell any App content (texts, images, audio) without written permission</li>
+    </ul>
+
+    <div class="danger-box">
+      ❌ Any prohibited use may result in legal action under applicable intellectual property and information
+      technology laws.
+    </div>
+  </section>
+
+  <!-- 7. Sharing -->
+  <section id="sharing">
+    <h2>7. Sharing Feature</h2>
+    <p>
+      The App allows you to generate and share sacred content as image cards. By using the Sharing feature:
+    </p>
+    <ul>
+      <li>You confirm that sharing will be done <strong>respectfully and in the spirit of devotion</strong></li>
+      <li>You accept that once content is shared to external platforms (WhatsApp, Instagram, Twitter, etc.),
+        those platforms' own Terms of Service apply</li>
+      <li>The App is not responsible for how shared content is received, interpreted, or redistributed
+        by third parties once shared</li>
+      <li>You agree <strong>not to use shared content to mock, parody, or disrespect</strong> Hindu religious
+        sentiments, deities, or sacred texts</li>
+    </ul>
+  </section>
+
+  <!-- 8. Notifications -->
+  <section id="notifications">
+    <h2>8. Notifications</h2>
+    <p>
+      The App offers an optional <strong>Daily Wisdom</strong> notification feature that delivers a Bhagavad
+      Gita verse each morning:
+    </p>
+    <ul>
+      <li>Notifications are optional and require your explicit permission on Android 13+ and iOS</li>
+      <li>You may disable notifications at any time through your device's system notification settings</li>
+      <li>Notifications are <strong>scheduled locally on your device</strong> — we do not send remote push
+        notifications via any external server or push notification service</li>
+      <li>The App may request the SCHEDULE_EXACT_ALARM permission to improve notification timing accuracy;
+        this is not required for core App functionality</li>
+    </ul>
+  </section>
+
+  <!-- 9. TTS -->
+  <section id="tts">
+    <h2>9. Text-to-Speech (TTS)</h2>
+    <p>
+      The App includes a TTS (text-to-speech) feature to read aloud sacred scriptures, prayers, and stories:
+    </p>
+    <ul>
+      <li>TTS uses your device's <strong>built-in speech synthesis engine</strong> (e.g., Google Text-to-Speech)</li>
+      <li>The quality, accuracy, and language support of TTS depends on your device and installed TTS engine</li>
+      <li>No microphone is accessed or required</li>
+      <li>The App uses <strong>wakelock</strong> during TTS playback to prevent the screen from turning off;
+        this does not affect battery charging or background processes outside the App</li>
+      <li>TTS pronunciation of Sanskrit, Hindi, and Gujarati texts may vary based on your device's TTS engine
+        capabilities</li>
+    </ul>
+  </section>
+
+  <!-- 10. Third-Party -->
+  <section id="third-party">
+    <h2>10. Third-Party Services &amp; Links</h2>
+    <p>
+      The App integrates third-party services and may contain links to external websites:
+    </p>
+    <ul>
+      <li>
+        <strong>Google AdMob:</strong> Governed by
+        <a href="https://developers.google.com/admob/terms" target="_blank" rel="noopener">Google AdMob Terms</a>
+        and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+      </li>
+      <li>
+        <strong>Google Play Services:</strong> Governed by
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Google Terms of Service</a>
+      </li>
+      <li>
+        <strong>External links</strong> (Privacy Policy page, Terms page, Play Store listing): We are not
+        responsible for the content or privacy practices of any third-party websites accessed through the App.
+      </li>
+    </ul>
+    <p>
+      We encourage you to review the terms and privacy policies of any third-party services you interact with
+      through the App.
+    </p>
+  </section>
+
+  <!-- 11. Updates -->
+  <section id="updates">
+    <h2>11. App Updates &amp; Force Update</h2>
+    <p>
+      We may release updates to the App from time to time to improve features, fix bugs, or address security issues:
+    </p>
+    <ul>
+      <li>We recommend always keeping the App updated to the latest version for the best experience and security</li>
+      <li>The App includes a <strong>remote configuration system</strong> that checks the minimum supported version
+        at launch. If your installed version falls below the minimum required version, you will be prompted to
+        update</li>
+      <li>In cases of critical security or content issues, the App may enforce a <strong>mandatory (force) update</strong>
+        — you will not be able to use the App until the update is installed</li>
+      <li>We are not liable for any issues arising from your use of an outdated version of the App</li>
+    </ul>
+  </section>
+
+  <!-- 12. Disclaimer -->
+  <section id="disclaimer">
+    <h2>12. Disclaimer of Warranties</h2>
+    <div class="warn-box">
+      ⚠️ The App is provided on an <strong>"AS IS" and "AS AVAILABLE"</strong> basis without warranties of
+      any kind, either express or implied.
+    </div>
+    <p>To the maximum extent permitted by applicable law, we disclaim all warranties, including but not limited to:</p>
+    <ul>
+      <li>Warranties of <strong>merchantability, fitness for a particular purpose, and non-infringement</strong></li>
+      <li>Warranties that the App will be <strong>uninterrupted, error-free, or completely secure</strong></li>
+      <li>Warranties regarding the <strong>accuracy, completeness, or reliability</strong> of any content in
+        the App, including AI-generated translations and explanations</li>
+      <li>Warranties that the App will be compatible with all devices or operating system versions</li>
+    </ul>
+    <p>
+      Sanskriti is a cultural and spiritual enrichment app. It is <strong>not a substitute for professional
+      religious, psychological, medical, or legal advice</strong> of any kind.
+    </p>
+  </section>
+
+  <!-- 13. Liability -->
+  <section id="liability">
+    <h2>13. Limitation of Liability</h2>
+    <p>
+      To the fullest extent permitted by applicable law, in no event shall Sanskriti, its developers, or
+      contributors be liable for:
+    </p>
+    <ul>
+      <li>Any <strong>indirect, incidental, special, consequential, or punitive damages</strong></li>
+      <li>Loss of data, revenue, goodwill, or profits</li>
+      <li>Any damages resulting from your use of or inability to use the App</li>
+      <li>Any content errors, inaccuracies, or omissions in the App's texts, translations, or images</li>
+      <li>Any third-party service failures (e.g., AdMob outage, TTS engine failure, GitHub Gist unavailability)</li>
+      <li>Any harm resulting from sharing App content to third-party platforms</li>
+    </ul>
+    <p>
+      Our total liability to you for any claims arising from the App shall not exceed the amount you paid
+      for the App in the 12 months preceding the claim (which, as the App is free, is <strong>INR 0</strong>).
+    </p>
+  </section>
+
+  <!-- 14. Indemnification -->
+  <section id="indemnification">
+    <h2>14. Indemnification</h2>
+    <p>
+      You agree to indemnify, defend, and hold harmless Sanskriti and its developers from and against any
+      claims, liabilities, damages, losses, and expenses (including legal fees) arising from:
+    </p>
+    <ul>
+      <li>Your use or misuse of the App</li>
+      <li>Your violation of these Terms</li>
+      <li>Your violation of any third-party rights, including intellectual property or privacy rights</li>
+      <li>Any content you share externally using the App's sharing features in a manner that harms others</li>
+    </ul>
+  </section>
+
+  <!-- 15. Governing Law -->
+  <section id="governing-law">
+    <h2>15. Governing Law &amp; Dispute Resolution</h2>
+    <p>
+      These Terms &amp; Conditions are governed by and construed in accordance with the laws of
+      <strong>India</strong>, without regard to its conflict of law provisions.
+    </p>
+    <p>
+      Any disputes arising in connection with these Terms or the App shall be subject to the
+      <strong>exclusive jurisdiction of the courts of India</strong>.
+    </p>
+    <p>
+      Before initiating any formal legal proceedings, you agree to first contact us at
+      <a href="mailto:appsanskriti@gmail.com">appsanskriti@gmail.com</a> to seek an informal resolution.
+      We will make good-faith efforts to resolve any dispute amicably within 30 days.
+    </p>
+    <div class="highlight-box">
+      🇮🇳 Applicable legislation includes the Information Technology Act, 2000 (as amended), the Digital
+      Personal Data Protection Act, 2023 (DPDPA), and the Consumer Protection (E-Commerce) Rules, 2020,
+      where applicable.
+    </div>
+  </section>
+
+  <!-- 16. Changes -->
+  <section id="changes">
+    <h2>16. Changes to These Terms</h2>
+    <p>
+      We reserve the right to modify or update these Terms at any time. When changes are made:
+    </p>
+    <ul>
+      <li>The <strong>Effective Date</strong> at the top of this page will be updated</li>
+      <li>Significant changes will be communicated via an <strong>in-app notice or Play Store update notes</strong></li>
+      <li>Continued use of the App after changes are posted constitutes your acceptance of the revised Terms</li>
+    </ul>
+    <p>
+      If you do not agree with the revised Terms, you should stop using the App and uninstall it.
+    </p>
+  </section>
+
+  <!-- 17. Contact -->
+  <section id="contact">
+    <h2>17. Contact Us</h2>
+    <p>
+      For any questions, concerns, content reports, or legal inquiries regarding these Terms, please contact us:
+    </p>
+    <ul>
+      <li>📧 <strong>Email:</strong> <a href="mailto:appsanskriti@gmail.com">appsanskriti@gmail.com</a></li>
+      <li>🌐 <strong>App:</strong> Sanskriti – Sacred Hindu Scriptures &amp; Stories</li>
+      <li>📱 <strong>Platform:</strong> Android (Google Play Store) &amp; iOS (App Store)</li>
+    </ul>
+    <p>We aim to respond to all legal and policy inquiries within <strong>7 business days</strong>.</p>
+    <div class="info-box">
+      🙏 <strong>Jai Shri Ram · Jai Shri Krishna</strong><br />
+      Thank you for being part of the Sanskriti community. We are committed to delivering the wisdom
+      of our ancient scriptures with the highest respect and care.
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="divider"></div>
+  <p>🕉 <strong>Sanskriti</strong> &mdash; Sacred Hindu Scriptures &amp; Stories</p>
+  <p style="margin-top:6px;">Terms &amp; Conditions &bull; Last Updated: October 4, 2026 &bull; Version 1.0</p>
+  <p style="margin-top:10px;">
+    <a href="./privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>
