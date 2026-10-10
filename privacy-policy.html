@@ -19,12 +19,29 @@
       --border:  #E8D8C4;
     }
 
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.75;
       font-size: 16px;
+    }
+
+    code {
+      background: #F3E8DC;
+      color: var(--saffron);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.88em;
+      font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     header {
@@ -120,29 +137,116 @@
       font-size: 0.95rem;
     }
 
+    /* Responsive Table Styles */
+    .table-wrapper {
+      width: 100%;
+      margin: 18px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #FFFFFF;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+
+    .table-scroll-hint {
+      display: none;
+      background: #FDF7F0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 7px 12px;
+      text-align: right;
+      border-bottom: 1px dashed var(--border);
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+    }
+
+    .table-scroll-hint svg {
+      vertical-align: -2px;
+      flex-shrink: 0;
+    }
+
+    .table-scroll-inner {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-scroll-inner::-webkit-scrollbar {
+      height: 6px;
+    }
+    .table-scroll-inner::-webkit-scrollbar-track {
+      background: #F8EFE4;
+    }
+    .table-scroll-inner::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
     table {
       width: 100%;
+      min-width: 500px;
       border-collapse: collapse;
-      margin: 16px 0;
       font-size: 0.92rem;
+      margin: 0;
     }
+
     th {
       background: #F3E5D8;
       color: var(--saffron);
-      padding: 10px 14px;
+      padding: 11px 14px;
       text-align: left;
       font-weight: 600;
-      border: 1px solid var(--border);
+      border-bottom: 2px solid var(--border);
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+      font-size: 0.88rem;
     }
-    td {
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      vertical-align: top;
-    }
-    tr:nth-child(even) td { background: #FAFAF8; }
 
-    a { color: var(--saffron); }
-    a:hover { text-decoration: underline; }
+    th:last-child {
+      border-right: none;
+    }
+
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.55;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    td:last-child {
+      border-right: none;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background: #FAF8F5;
+    }
+
+    /* Fallback if a bare table is used without wrapper */
+    section > table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    a {
+      color: var(--saffron);
+      word-break: break-word;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
     footer {
       text-align: center;
@@ -155,6 +259,149 @@
       height: 3px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
       margin: 0 auto 18px;
+    }
+
+    /* Tablet & Medium Mobile Styles */
+    @media (max-width: 768px) {
+      body {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      header {
+        padding: 36px 18px 30px;
+      }
+
+      header .om {
+        font-size: 42px;
+        margin-bottom: 8px;
+      }
+
+      header h1 {
+        font-size: 1.65rem;
+      }
+
+      header .app-name {
+        font-size: 0.95rem;
+      }
+
+      .container {
+        padding: 24px 14px 44px;
+      }
+
+      .toc-card {
+        padding: 20px 18px;
+        margin-bottom: 24px;
+        border-radius: 8px;
+      }
+
+      .toc-card h2 {
+        font-size: 0.95rem;
+      }
+
+      .toc-card ol {
+        padding-left: 20px;
+      }
+
+      .toc-card li {
+        margin-bottom: 8px;
+      }
+
+      section {
+        padding: 22px 18px;
+        margin-bottom: 18px;
+        border-radius: 8px;
+      }
+
+      section h2 {
+        font-size: 1.15rem;
+        margin-bottom: 14px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+
+      section h3 {
+        font-size: 0.98rem;
+        margin: 16px 0 6px;
+      }
+
+      .table-scroll-hint {
+        display: flex;
+      }
+
+      table {
+        font-size: 0.86rem;
+        min-width: 500px;
+      }
+
+      th, td {
+        padding: 9px 12px;
+      }
+
+      .highlight-box, .info-box, .warn-box {
+        padding: 12px 14px;
+        margin: 14px 0;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        padding: 28px 16px 36px;
+      }
+    }
+
+    /* Small Mobile Phones (e.g. 320px - 420px) */
+    @media (max-width: 480px) {
+      header {
+        padding: 28px 12px 24px;
+      }
+
+      header .om {
+        font-size: 38px;
+      }
+
+      header h1 {
+        font-size: 1.45rem;
+        letter-spacing: 0.5px;
+      }
+
+      header .badge {
+        font-size: 0.76rem;
+        padding: 3px 12px;
+      }
+
+      .container {
+        padding: 16px 10px 36px;
+      }
+
+      .toc-card {
+        padding: 16px 14px;
+      }
+
+      .toc-card ol {
+        padding-left: 18px;
+      }
+
+      section {
+        padding: 18px 14px;
+        margin-bottom: 16px;
+      }
+
+      section h2 {
+        font-size: 1.08rem;
+      }
+
+      table {
+        font-size: 0.82rem;
+        min-width: 440px;
+      }
+
+      th, td {
+        padding: 8px 10px;
+      }
+
+      ul, ol {
+        padding-left: 18px;
+      }
     }
   </style>
 </head>
@@ -178,7 +425,7 @@
       <li><a href="#data-not-collected">Information We Do NOT Collect</a></li>
       <li><a href="#local-storage">Local Storage &amp; On-Device Databases</a></li>
       <li><a href="#third-party">Third-Party Services</a></li>
-      <li><a href="#admob">Google AdMob &amp; Non-Personalized Ads</a></li>
+      <li><a href="#admob">Google AdMob &amp; Advertising</a></li>
       <li><a href="#notifications">Local Daily Wisdom Notifications</a></li>
       <li><a href="#tts">Text-to-Speech (TTS)</a></li>
       <li><a href="#sharing">Sharing &amp; Image Generation</a></li>
@@ -270,40 +517,52 @@
       and local key-value storage (via <code>GetStorage</code>). This data is never sent to our servers:
     </p>
 
-    <table>
-      <tr>
-        <th>Local Data Stored</th>
-        <th>Purpose</th>
-      </tr>
-      <tr>
-        <td>Selected App Language (English, Hindi, Gujarati)</td>
-        <td>Remember your preferred language</td>
-      </tr>
-      <tr>
-        <td>Dark Mode Preference</td>
-        <td>Remember your theme setting (light/dark)</td>
-      </tr>
-      <tr>
-        <td>Reading Font Size &amp; Style</td>
-        <td>Maintain your customized reading layout</td>
-      </tr>
-      <tr>
-        <td>Saved Bookmarks &amp; Favorites</td>
-        <td>Save your favorite Shlokas, Prayers, and Stories</td>
-      </tr>
-      <tr>
-        <td>Last Read Shloka / Reading Progress</td>
-        <td>Allow you to pick up where you left off</td>
-      </tr>
-      <tr>
-        <td>Policy Consent Acknowledgment</td>
-        <td>Record that you acknowledged the policy notice</td>
-      </tr>
-      <tr>
-        <td>Daily Notification Scheduling Timestamp</td>
-        <td>Prevent duplicate local reminders</td>
-      </tr>
-    </table>
+    <div class="table-wrapper">
+      <div class="table-scroll-hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
+        Swipe sideways to view full table
+      </div>
+      <div class="table-scroll-inner">
+        <table>
+          <thead>
+            <tr>
+              <th>Local Data Stored</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Selected App Language (English, Hindi, Gujarati)</td>
+              <td>Remember your preferred language</td>
+            </tr>
+            <tr>
+              <td>Dark Mode Preference</td>
+              <td>Remember your theme setting (light/dark)</td>
+            </tr>
+            <tr>
+              <td>Reading Font Size &amp; Style</td>
+              <td>Maintain your customized reading layout</td>
+            </tr>
+            <tr>
+              <td>Saved Bookmarks &amp; Favorites</td>
+              <td>Save your favorite Shlokas, Prayers, and Stories</td>
+            </tr>
+            <tr>
+              <td>Last Read Shloka / Reading Progress</td>
+              <td>Allow you to pick up where you left off</td>
+            </tr>
+            <tr>
+              <td>Policy Consent Acknowledgment</td>
+              <td>Record that you acknowledged the policy notice</td>
+            </tr>
+            <tr>
+              <td>Daily Notification Scheduling Timestamp</td>
+              <td>Prevent duplicate local reminders</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <div class="highlight-box">
       📱 You can erase all local data at any time by clearing app data in your device settings
@@ -316,48 +575,60 @@
     <h2>5. Third-Party Services</h2>
     <p>The App integrates the following libraries and services:</p>
 
-    <table>
-      <tr>
-        <th>Service / Library</th>
-        <th>Purpose</th>
-        <th>Data Handling</th>
-      </tr>
-      <tr>
-        <td>Google Mobile Ads (AdMob)</td>
-        <td>Displays non-personalized ads to fund the free application</td>
-        <td>Collects GAID, IP, diagnostics under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
-      </tr>
-      <tr>
-        <td>GitHub Gist</td>
-        <td>Hosts remote configuration JSON for update checking</td>
-        <td>Processes client IP upon HTTPS request per <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a></td>
-      </tr>
-      <tr>
-        <td>Flutter Local Notifications</td>
-        <td>Schedules daily morning wisdom reminders locally</td>
-        <td>100% on-device — no external network transmission</td>
-      </tr>
-      <tr>
-        <td>flutter_tts (Text-to-Speech)</td>
-        <td>Reads scripture verses aloud using Android's built-in TTS</td>
-        <td>Processes text locally using your device's native speech engine</td>
-      </tr>
-      <tr>
-        <td>share_plus</td>
-        <td>Allows sharing verses/cards via Android's native share sheet</td>
-        <td>Generates images in local memory; no external server involvement</td>
-      </tr>
-      <tr>
-        <td>url_launcher</td>
-        <td>Opens external links (Privacy Policy, GitHub Gist, email) in your browser</td>
-        <td>Delegates directly to your system's default browser/client</td>
-      </tr>
-    </table>
+    <div class="table-wrapper">
+      <div class="table-scroll-hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
+        Swipe sideways to view full table
+      </div>
+      <div class="table-scroll-inner">
+        <table>
+          <thead>
+            <tr>
+              <th>Service / Library</th>
+              <th>Purpose</th>
+              <th>Data Handling</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google Mobile Ads (AdMob)</td>
+              <td>Displays banner and interstitial ads to keep the application free</td>
+              <td>Collects GAID, IP, diagnostics under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+            </tr>
+            <tr>
+              <td>GitHub Gist</td>
+              <td>Hosts remote configuration JSON for update checking</td>
+              <td>Processes client IP upon HTTPS request per <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a></td>
+            </tr>
+            <tr>
+              <td>Flutter Local Notifications</td>
+              <td>Schedules daily morning wisdom reminders locally</td>
+              <td>100% on-device — no external network transmission</td>
+            </tr>
+            <tr>
+              <td>flutter_tts (Text-to-Speech)</td>
+              <td>Reads scripture verses aloud using Android's built-in TTS</td>
+              <td>Processes text locally using your device's native speech engine</td>
+            </tr>
+            <tr>
+              <td>share_plus</td>
+              <td>Allows sharing verses/cards via Android's native share sheet</td>
+              <td>Generates images in local memory; no external server involvement</td>
+            </tr>
+            <tr>
+              <td>url_launcher</td>
+              <td>Opens external links (Privacy Policy, GitHub Gist, email) in your browser</td>
+              <td>Delegates directly to your system's default browser/client</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
   <!-- 6. AdMob -->
   <section id="admob">
-    <h2>6. Google AdMob &amp; Non-Personalized Ads</h2>
+    <h2>6. Google AdMob &amp; Advertising</h2>
     <p>
       Sanskriti is free to use and supported by advertisements served through <strong>Google AdMob</strong>.
       We display:
@@ -368,22 +639,23 @@
     </ul>
 
     <div class="info-box">
-      🛡️ <strong>Non-Personalized Ads by Default:</strong> Our app code explicitly requests <strong>non-personalized ads</strong>
-      (<code>nonPersonalizedAds: true</code>) from the Google Mobile Ads SDK for all ad requests. Non-personalized ads are targeted
-      using contextual content rather than a profile of your past behavior.
+      🛡️ <strong>Ad Personalization &amp; Controls:</strong> Google AdMob may serve advertisements tailored to your interests
+      using your device's Advertising ID, or contextual ads based on the app's content. You maintain full control over
+      ad personalization and can opt out or reset your Advertising ID anytime via your device settings.
     </div>
 
     <h3>Target Distribution &amp; Regional Compliance</h3>
     <p>
-      The Sanskriti App is primarily published for and distributed to users in <strong>India</strong> and territories
-      where European Union UMP (User Messaging Platform) consent dialogs are not mandated. If you reside in the EEA or UK,
-      Google AdMob will serve contextual, non-personalized ads in accordance with applicable Google policies.
+      The Sanskriti App is primarily published for and distributed to users in <strong>India</strong> and global regions
+      where standard AdMob advertising is supported. In jurisdictions requiring explicit consent mechanisms (such as the European
+      Economic Area or the UK), Google AdMob automatically serves non-personalized, contextual advertisements where applicable consent
+      is not obtained.
     </p>
 
     <h3>Controlling Your Advertising ID</h3>
     <p>
       You can manage, reset, or delete your Android Advertising ID at any time through your device settings:
-      <em>Settings &gt; Google &gt; Ads &gt; Delete advertising ID</em> (or <em>Reset advertising ID</em>).
+      <em>Settings &gt; Google &gt; Ads &gt; Delete advertising ID</em> (or <em>Reset advertising ID / Opt out of Ads Personalization</em>).
     </p>
   </section>
 
@@ -460,38 +732,50 @@
     <h2>11. Android App Permissions</h2>
     <p>The App requests and uses only the following Android permissions:</p>
 
-    <table>
-      <tr>
-        <th>Permission</th>
-        <th>Source</th>
-        <th>Purpose</th>
-      </tr>
-      <tr>
-        <td><code>android.permission.INTERNET</code></td>
-        <td>App Manifest</td>
-        <td>Required for loading non-personalized AdMob ads and fetching version configuration.</td>
-      </tr>
-      <tr>
-        <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
-        <td>Google Mobile Ads SDK</td>
-        <td>Allows AdMob to check network availability before making ad requests.</td>
-      </tr>
-      <tr>
-        <td><code>com.google.android.gms.permission.AD_ID</code></td>
-        <td>Google Mobile Ads SDK</td>
-        <td>Allows Google Play Services to provide the Advertising ID for ad frequency capping and fraud prevention.</td>
-      </tr>
-      <tr>
-        <td><code>android.permission.POST_NOTIFICATIONS</code></td>
-        <td>App Manifest</td>
-        <td>Allows posting the daily morning Shloka notification on Android 13+ (user-controllable).</td>
-      </tr>
-      <tr>
-        <td><code>android.permission.RECEIVE_BOOT_COMPLETED</code></td>
-        <td>App Manifest</td>
-        <td>Allows the local notification receiver to reschedule the 7-day morning reminders if the phone restarts.</td>
-      </tr>
-    </table>
+    <div class="table-wrapper">
+      <div class="table-scroll-hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
+        Swipe sideways to view full table
+      </div>
+      <div class="table-scroll-inner">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Source</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>android.permission.INTERNET</code></td>
+              <td>App Manifest</td>
+              <td>Required for loading AdMob ads and fetching version configuration.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.ACCESS_NETWORK_STATE</code></td>
+              <td>Google Mobile Ads SDK</td>
+              <td>Allows AdMob to check network availability before making ad requests.</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code></td>
+              <td>Google Mobile Ads SDK</td>
+              <td>Allows Google Play Services to provide the Advertising ID for ad frequency capping and fraud prevention.</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.POST_NOTIFICATIONS</code></td>
+              <td>App Manifest</td>
+              <td>Allows posting the daily morning Shloka notification on Android 13+ (user-controllable).</td>
+            </tr>
+            <tr>
+              <td><code>android.permission.RECEIVE_BOOT_COMPLETED</code></td>
+              <td>App Manifest</td>
+              <td>Allows the local notification receiver to reschedule the 7-day morning reminders if the phone restarts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <p>
       The App does <strong>not</strong> request exact alarm permissions (<code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code>),
