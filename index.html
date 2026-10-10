@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanskriti – Gita, Story & Aarti | Indian Devotional App</title>
+  <meta name="description" content="Sanskriti brings you the divine wisdom of Bhagavad Gita, devotional Aartis, sacred stories of Ram, Krishna & Hanuman, all in one beautiful app. Available on Android." />
+  <meta name="keywords" content="Sanskriti app, Bhagavad Gita, Aarti, Ram, Krishna, Hanuman, devotional app, Hindu, Indian, spiritual" />
+  <meta property="og:title" content="Sanskriti – Gita, Story & Aarti" />
+  <meta property="og:description" content="Your complete Indian devotional companion. Bhagavad Gita, Aartis, Sacred Stories and more." />
+  <meta property="og:image" content="feature_graphic_1024x500.jpg" />
+  <link rel="icon" href="app_icon_512.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --saffron:        #E8720C;
+      --saffron-light:  #F9A84B;
+      --gold:           #C8960C;
+      --gold-light:     #FFD96A;
+      --cream:          #FDF6EC;
+      --dark-bg:        #1A0A00;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(14,5,0,0.80);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(232,114,12,0.14);
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #FFD96A, #E8720C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 22px; align-items: center; }
+    .nav-links a {
+      font-size: 0.86rem;
+      color: rgba(253,246,236,0.58);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--saffron-light); }
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #E8720C, #C8960C);
+      color: #fff !important;
+      font-size: 0.86rem !important;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 3px 18px rgba(232,114,12,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .nav-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(232,114,12,.55); }
+    .nav-btn svg { width: 16px; height: 16px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 100px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 20%, rgba(232,114,12,.28) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(200,150,12,.16) 0%, transparent 60%),
+        linear-gradient(160deg, #0E0500 0%, #1A0A00 50%, #0A0300 100%);
+    }
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(232,114,12,.10);
+      animation: spin linear infinite;
+    }
+    .ring-1 { width:420px;height:420px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:60s; }
+    .ring-2 { width:640px;height:640px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:90s;animation-direction:reverse; }
+    .ring-3 { width:900px;height:900px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:120s;border-color:rgba(200,150,12,.07); }
+    @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+    .hero-content { position: relative; z-index: 2; max-width: 780px; }
+
+    .app-icon {
+      width: 120px; height: 120px;
+      border-radius: 26px;
+      box-shadow: 0 8px 40px rgba(232,114,12,.5), 0 0 0 3px rgba(232,114,12,.25);
+      margin-bottom: 28px;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1rem;
+      color: var(--saffron-light);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      opacity: .85;
+    }
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #FFD96A 0%, #F9A84B 50%, #E8720C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: rgba(253,246,236,.75);
+      margin-bottom: 42px;
+      letter-spacing: .4px;
+    }
+    .cta-group { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+    .btn-play {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #E8720C, #C8960C);
+      color: #fff;
+      font-weight: 600; font-size: 1rem;
+      padding: 15px 30px; border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(232,114,12,.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-play:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(232,114,12,.6); }
+    .btn-play svg { width: 20px; height: 20px; }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(232,114,12,.32);
+      color: var(--saffron-light);
+      font-size: 1rem; font-weight: 500;
+      padding: 15px 30px; border-radius: 50px;
+      text-decoration: none; backdrop-filter: blur(6px);
+      transition: background .2s, transform .2s;
+    }
+    .btn-ghost:hover { background: rgba(232,114,12,.12); transform: translateY(-2px); }
+
+    /* ── SECTION HELPERS ── */
+    .section-label {
+      text-align: center; font-family: 'Cinzel', serif;
+      font-size: .82rem; letter-spacing: 4px;
+      color: var(--saffron); text-transform: uppercase; margin-bottom: 10px;
+    }
+    .section-title {
+      text-align: center; font-family: 'Cinzel', serif;
+      font-size: clamp(1.7rem, 4vw, 2.7rem); font-weight: 600;
+      background: linear-gradient(135deg, #FFD96A, #F9A84B);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 14px;
+    }
+    .section-desc {
+      text-align: center; font-size: 1rem; color: rgba(253,246,236,.58);
+      max-width: 540px; margin: 0 auto 56px; line-height: 1.75;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 100px 24px;
+      background: linear-gradient(180deg, #0E0500, #130700);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px; max-width: 1080px; margin: 0 auto;
+    }
+    .feature-card {
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(232,114,12,.14);
+      border-radius: 20px; padding: 34px 26px; text-align: center;
+      backdrop-filter: blur(8px);
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232,114,12,.42);
+      box-shadow: 0 12px 40px rgba(232,114,12,.14);
+    }
+    .feature-icon { font-size: 2.6rem; margin-bottom: 18px; display: block; }
+    .feature-title {
+      font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 600;
+      color: var(--gold-light); margin-bottom: 10px;
+    }
+    .feature-text { font-size: .9rem; color: rgba(253,246,236,.56); line-height: 1.65; }
+
+    /* ── DIVIDER ── */
+    .om-divider {
+      text-align: center; font-size: 1.4rem;
+      color: rgba(232,114,12,.3); padding: 28px 0; letter-spacing: 10px;
+    }
+
+    /* ── BANNER ── */
+    .banner-section {
+      padding: 90px 24px;
+      background: linear-gradient(135deg, rgba(232,114,12,.07), rgba(200,150,12,.04));
+      border-top: 1px solid rgba(232,114,12,.11);
+      border-bottom: 1px solid rgba(232,114,12,.11);
+    }
+    .banner-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; align-items: center; gap: 60px; flex-wrap: wrap; justify-content: center;
+    }
+    .banner-image {
+      flex-shrink: 0; width: 100%; max-width: 520px;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(232,114,12,.2);
+    }
+    .banner-image img { width: 100%; height: auto; display: block; }
+    .banner-text { flex: 1; min-width: 280px; }
+    .banner-text h2 {
+      font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 4vw, 2.3rem); font-weight: 600;
+      background: linear-gradient(135deg, #FFD96A, #F9A84B);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 18px;
+    }
+    .banner-text p { font-size: .98rem; color: rgba(253,246,236,.62); line-height: 1.75; margin-bottom: 12px; }
+    .feature-list { list-style: none; margin-top: 18px; }
+    .feature-list li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .92rem; color: rgba(253,246,236,.72); margin-bottom: 9px;
+    }
+    .feature-list li::before { content: '✦'; color: var(--saffron); font-size: .65rem; flex-shrink: 0; }
+
+    /* ── STATS ── */
+    .stats { padding: 80px 24px; background: #0E0500; }
+    .stats-grid {
+      display: flex; flex-wrap: wrap; max-width: 880px; margin: 0 auto;
+      border: 1px solid rgba(232,114,12,.14); border-radius: 20px; overflow: hidden;
+    }
+    .stat-item {
+      flex: 1; min-width: 150px; padding: 38px 20px; text-align: center;
+      border-right: 1px solid rgba(232,114,12,.11);
+      background: rgba(255,255,255,.015);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Cinzel', serif; font-size: 2.3rem; font-weight: 700;
+      background: linear-gradient(135deg, #FFD96A, #E8720C);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      display: block;
+    }
+    .stat-label { font-size: .82rem; color: rgba(253,246,236,.46); margin-top: 5px; letter-spacing: .4px; }
+
+    /* ── DOWNLOAD CTA ── */
+    .download-section {
+      padding: 110px 24px; text-align: center;
+      background: linear-gradient(180deg, #0E0500, #1A0A00);
+      position: relative; overflow: hidden;
+    }
+    .download-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(232,114,12,.11) 0%, transparent 70%);
+    }
+    .download-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 700;
+      background: linear-gradient(135deg, #FFD96A, #F9A84B, #E8720C);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 14px; position: relative;
+    }
+    .download-section p {
+      font-size: 1.05rem; color: rgba(253,246,236,.57);
+      margin-bottom: 40px; position: relative;
+    }
+    .download-section .btn-play { font-size: 1.08rem; padding: 16px 34px; position: relative; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 38px 24px; background: #080200;
+      border-top: 1px solid rgba(232,114,12,.11);
+    }
+    .footer-inner {
+      max-width: 880px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .footer-brand {
+      font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 700;
+      background: linear-gradient(135deg, #FFD96A, #E8720C);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .footer-brand small {
+      display: block; font-family: 'Inter', sans-serif; font-size: .68rem; font-weight: 400;
+      color: rgba(253,246,236,.3); -webkit-text-fill-color: rgba(253,246,236,.3);
+      letter-spacing: 1.5px; margin-top: 2px;
+    }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: .86rem; color: rgba(253,246,236,.42); text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--saffron-light); }
+    .footer-copy {
+      width: 100%; text-align: center;
+      font-size: .76rem; color: rgba(253,246,236,.22); margin-top: 14px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .nav-btn { display: none; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(232,114,12,.11); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">Sanskriti</a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#about">About</a>
+    <a href="privacy-policy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://play.google.com/store/apps/details?id=com.appsanskriti.sanskriti"
+       class="nav-btn" id="nav-playstore-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76A2.06 2.06 0 0 1 2 21.88V2.12C2 1.43 2.44.88 3.18.24L13.8 12 3.18 23.76zm14.94-7.3-3.06-3.07L12.43 12l2.63-2.63 3.06 3.06A1.5 1.5 0 0 1 18.12 16.46zM4.07 1.24l10.22 10.22L11.66 14l-7.6-12.76zM4.07 22.76 11.66 10l2.63 2.54L4.07 22.76z"/></svg>
+      Download
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="ring ring-1"></div>
+  <div class="ring ring-2"></div>
+  <div class="ring ring-3"></div>
+  <div class="hero-content">
+    <img src="app_icon_512.png" alt="Sanskriti App Icon" class="app-icon" />
+    <p class="hero-eyebrow">🙏 &nbsp; जय श्री राम &nbsp;•&nbsp; ॐ नमः शिवाय &nbsp;•&nbsp; हरि ओम &nbsp; 🙏</p>
+    <h1 class="hero-title">Sanskriti</h1>
+    <p class="hero-subtitle">Gita &nbsp;·&nbsp; Story &nbsp;·&nbsp; Aarti &nbsp;|&nbsp; Your Complete Indian Devotional Companion</p>
+    <div class="cta-group">
+      <a href="https://play.google.com/store/apps/details?id=com.appsanskriti.sanskriti"
+         id="hero-playstore-btn" class="btn-play" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3.18 23.76A2.06 2.06 0 0 1 2 21.88V2.12C2 1.43 2.44.88 3.18.24L13.8 12 3.18 23.76zm14.94-7.3-3.06-3.07L12.43 12l2.63-2.63 3.06 3.06A1.5 1.5 0 0 1 18.12 16.46zM4.07 1.24l10.22 10.22L11.66 14l-7.6-12.76zM4.07 22.76 11.66 10l2.63 2.54L4.07 22.76z"/>
+        </svg>
+        Download on Google Play
+      </a>
+      <a href="#features" class="btn-ghost">Explore Features ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <p class="section-label">Sacred Features</p>
+  <h2 class="section-title">Everything Devotional in One App</h2>
+  <p class="section-desc">From the timeless wisdom of Bhagavad Gita to divine Aartis and sacred stories — beautifully crafted for your daily spiritual practice.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">📖</span>
+      <h3 class="feature-title">Bhagavad Gita</h3>
+      <p class="feature-text">All 18 chapters with Sanskrit shlokas, Hindi meaning, and practical life wisdom to guide you every single day.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🪔</span>
+      <h3 class="feature-title">Daily Aarti</h3>
+      <p class="feature-text">Complete Aarti collection for Ram, Krishna, Hanuman, Ganesh, Durga, Shiv and more — perfect for your morning & evening pooja.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🏹</span>
+      <h3 class="feature-title">Sacred Stories</h3>
+      <p class="feature-text">Timeless tales of Shri Ram, Krishna, Hanuman and other divine figures — bringing mythology to life in simple, beautiful language.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📿</span>
+      <h3 class="feature-title">Mantras & Chalisa</h3>
+      <p class="feature-text">Hanuman Chalisa, Vishnu Sahasranam, Shiv Tandav and hundreds of sacred mantras with proper transliterations.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌅</span>
+      <h3 class="feature-title">Daily Inspiration</h3>
+      <p class="feature-text">Start your day with a divine shloka or quote — gentle reminders that keep your mind connected to the divine.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌙</span>
+      <h3 class="feature-title">Dark & Light Mode</h3>
+      <p class="feature-text">Beautifully designed in both dark and light themes — comfortable for reading during night-time prayers or morning pooja.</p>
+    </div>
+  </div>
+</section>
+
+<div class="om-divider">ॐ &nbsp;✦&nbsp; ॐ</div>
+
+<!-- BANNER -->
+<section class="banner-section" id="about">
+  <div class="banner-inner">
+    <div class="banner-image">
+      <img src="feature_graphic_1024x500.jpg" alt="Sanskriti App" />
+    </div>
+    <div class="banner-text">
+      <h2>Carry Divine Wisdom Everywhere You Go</h2>
+      <p>Sanskriti is more than an app — it is your personal spiritual library, your daily puja companion, and your guide to Indian cultural heritage.</p>
+      <p>Designed with love for every Hindu family, it brings the teachings of our ancient scriptures right to your fingertips.</p>
+      <ul class="feature-list">
+        <li>100% Free to Use</li>
+        <li>Works Offline — No Internet Required for Reading</li>
+        <li>Clean, Minimal Ad Experience</li>
+        <li>Available in Hindi &amp; English</li>
+        <li>Suitable for All Ages, Including Children</li>
+        <li>Regularly Updated with New Content</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-number">18</span>
+      <span class="stat-label">Gita Chapters</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">700+</span>
+      <span class="stat-label">Sacred Shlokas</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">50+</span>
+      <span class="stat-label">Aartis &amp; Mantras</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">Free Forever</span>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CTA -->
+<section class="download-section">
+  <h2>Begin Your Spiritual Journey Today</h2>
+  <p>Join thousands of devotees who start their day with Sanskriti</p>
+  <a href="https://play.google.com/store/apps/details?id=com.appsanskriti.sanskriti"
+     id="cta-playstore-btn" class="btn-play" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M3.18 23.76A2.06 2.06 0 0 1 2 21.88V2.12C2 1.43 2.44.88 3.18.24L13.8 12 3.18 23.76zm14.94-7.3-3.06-3.07L12.43 12l2.63-2.63 3.06 3.06A1.5 1.5 0 0 1 18.12 16.46zM4.07 1.24l10.22 10.22L11.66 14l-7.6-12.76zM4.07 22.76 11.66 10l2.63 2.54L4.07 22.76z"/>
+    </svg>
+    Free Download on Google Play
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      Sanskriti
+      <small>GITA · STORY · AARTI</small>
+    </div>
+    <div class="footer-links">
+      <a href="privacy-policy.html" id="footer-privacy-link">Privacy Policy</a>
+      <a href="terms.html" id="footer-terms-link">Terms of Service</a>
+      <a href="mailto:appsanskriti@gmail.com" id="footer-contact-link">Contact Us</a>
+    </div>
+    <p class="footer-copy">© 2024 Sanskriti Apps. All rights reserved. Made with 🙏 in India.</p>
+  </div>
+</footer>
+
+</body>
+</html>
