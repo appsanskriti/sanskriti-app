@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Sanskriti – Gita, Story & Aarti</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="app_icon_512.png" type="image/png" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#1A0A00;color:#FDF6EC;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(232,114,12,.28),transparent 70%),#1A0A00}
+    .card{max-width:420px;width:100%}
+    img{width:110px;height:110px;border-radius:24px;box-shadow:0 8px 40px rgba(232,114,12,.5);margin-bottom:22px}
+    h1{font-size:1.6rem;color:#FFD96A;margin-bottom:8px}
+    p{color:rgba(253,246,236,.7);line-height:1.6;margin-bottom:22px;font-size:.98rem}
+    .btn{display:block;width:100%;padding:15px 20px;border-radius:50px;font-weight:600;font-size:1rem;text-decoration:none;margin-bottom:12px;border:0;cursor:pointer}
+    .primary{background:linear-gradient(135deg,#E8720C,#C8960C);color:#fff}
+    .ghost{background:rgba(255,255,255,.07);border:1px solid rgba(232,114,12,.4);color:#F9A84B}
+    .hide{display:none}
+    small{display:block;color:rgba(253,246,236,.45);margin-top:10px;font-size:.8rem;word-break:break-all}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="app_icon_512.png" alt="Sanskriti" />
+    <h1>Sanskriti</h1>
+
+    <!-- Android + desktop -->
+    <div id="android-box">
+      <p id="status">Opening Google Play…</p>
+      <a id="play-btn" class="btn primary" href="https://play.google.com/store/apps/details?id=com.sanskriti.ebook">Open in Google Play</a>
+      <button id="copy-btn" class="btn ghost" type="button">Copy link</button>
+      <small>https://play.google.com/store/apps/details?id=com.sanskriti.ebook</small>
+    </div>
+
+    <!-- iPhone: app is Android only -->
+    <div id="ios-box" class="hide">
+      <p>Sanskriti is currently available for Android. Visit our page to learn more.</p>
+      <a class="btn primary" href="https://appsanskriti.github.io/sanskriti-app/">Visit website</a>
+    </div>
+  </div>
+
+<script>
+(function () {
+  var ID = "com.sanskriti.ebook";
+  var WEB = "https://play.google.com/store/apps/details?id=" + ID;
+  var MARKET = "market://details?id=" + ID;
+
+  var ua = navigator.userAgent || "";
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var isInstagram = /Instagram/i.test(ua);
+
+  var androidBox = document.getElementById("android-box");
+  var iosBox = document.getElementById("ios-box");
+  var status = document.getElementById("status");
+  var playBtn = document.getElementById("play-btn");
+  var copyBtn = document.getElementById("copy-btn");
+
+  // Always keep a working HTTPS link on the button.
+  playBtn.href = WEB;
+
+  if (isIOS) {
+    androidBox.classList.add("hide");
+    iosBox.classList.remove("hide");
+    return;
+  }
+
+  // Copy with accurate success/error feedback.
+  copyBtn.addEventListener("click", async function () {
+    var input = null;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(WEB);
+      } else {
+        input = document.createElement("textarea");
+        input.value = WEB;
+        document.body.appendChild(input);
+        input.select();
+        if (!document.execCommand("copy")) { throw new Error("Copy failed"); }
+      }
+      copyBtn.textContent = "Copied ✓";
+    } catch (error) {
+      copyBtn.textContent = "Please copy the link manually";
+    } finally {
+      if (input && input.parentNode) { input.parentNode.removeChild(input); }
+    }
+  });
+
+  if (isAndroid) {
+    if (isInstagram) {
+      // Stay on this page so the buttons remain visible.
+      status.textContent = "Tap Open in Google Play if it does not open automatically.";
+      setTimeout(function () { window.location.href = MARKET; }, 300);
+    } else {
+      status.textContent = "Opening Google Play...";
+      window.location.assign(WEB);
+    }
+  } else {
+    // Desktop visitors open the Play Store web listing.
+    window.location.replace(WEB);
+  }
+})();
+</script>
+</body>
+</html>
