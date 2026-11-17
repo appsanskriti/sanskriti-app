@@ -88,14 +88,14 @@
   });
 
   if (isAndroid) {
-    if (isInstagram) {
-      // Stay on this page so the buttons remain visible.
-      status.textContent = "Tap Open in Google Play if it does not open automatically.";
-      setTimeout(function () { window.location.href = MARKET; }, 300);
-    } else {
-      status.textContent = "Opening Google Play...";
-      window.location.assign(WEB);
-    }
+    // Tap opens the Play Store APP directly; falls back to the web page.
+    var INTENT = "intent://details?id=" + ID +
+      "#Intent;scheme=market;package=com.android.vending;" +
+      "S.browser_fallback_url=" + encodeURIComponent(WEB) + ";end";
+    playBtn.href = INTENT;
+    status.textContent = "Tap the button to open Google Play.";
+    // Best-effort auto open (some browsers block this until a tap).
+    setTimeout(function () { window.location.href = MARKET; }, 300);
   } else {
     // Desktop visitors open the Play Store web listing.
     window.location.replace(WEB);
